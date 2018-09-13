@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+
+	<appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+		<target>System.out</target>
+		<encoder>
+			<pattern>%d %-5level [%thread] %logger{0}: %msg%n</pattern>
+			<outputPatternAsHeader>true</outputPatternAsHeader>
+		</encoder>
+		<!--
+                <encoder class="net.logstash.logback.encoder.LoggingEventCompositeJsonEncoder">
+                    <providers>
+                        <timestamp>
+                            <fieldName>timestamp</fieldName>
+                            <timeZone>UTC</timeZone>
+                        </timestamp>
+                        <logLevel/>
+                        <loggerName/>
+                        <stackTrace />
+                        <message/>
+                        <mdc/>
+
+                    </providers>
+                </encoder>-->
+	</appender>
+
+
+
+	<!--
+
+	<logger name="org.apache.camel.zipkin" level="TRACE" additivity="false">
+		<appender-ref ref="CONSOLE" />
+	</logger>
+	<logger name="org.apache.camel.opentracing" level="TRACE" additivity="false">
+		<appender-ref ref="CONSOLE" />
+	</logger>
+-->
+
+	<root level="info">
+		<appender-ref ref="CONSOLE" />
+	</root>
+</configuration>

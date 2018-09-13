@@ -1,0 +1,26 @@
+service:
+  port: ${PORT:9999}
+
+camel:
+ springboot:
+    main-run-controller: true
+ zipkin:
+    enabled: true
+    # configure zipkin
+    endpoint: ${ZIPKIN:http://localhost:9411/api/v2/spans}
+    # the zipkin service name
+    serviceName: gateway
+    Hostname: ${ZIPKIN_HOSTNAME:localhost}
+    Port: ${ZIPKIN_PORT:9411}
+
+# logging to see the zipkin traces
+#logging:
+#  level:
+#    org:
+#      apache:
+#        camel:
+#          zipkin: debug
+
+
+account-service: ${ACCOUT_SERVICE:http://localhost:9998}
+discount-service: ${DISCOUNT_SERVICE:http://localhost:8888}
