@@ -1,5 +1,6 @@
 service:
   port: ${PORT:9999}
+  host: ${HOST:0.0.0.0}
 
 camel:
  springboot:

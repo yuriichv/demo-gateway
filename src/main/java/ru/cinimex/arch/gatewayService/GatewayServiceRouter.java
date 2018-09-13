@@ -13,7 +13,7 @@ public class GatewayServiceRouter extends RouteBuilder{
     @Override
     public void configure() throws Exception {
 
-        restConfiguration().host("localhost").port("{{service.port}}").bindingMode(RestBindingMode.auto);
+        restConfiguration().host("{{service.host}}").port("{{service.port}}").bindingMode(RestBindingMode.auto);
 
         onException(Exception.class)
                 .handled(true)
